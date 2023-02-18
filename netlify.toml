@@ -1,0 +1,4 @@
+[dev]
+  functions="static/functions"
+  command="yarn develop"
+  targetPort=8000
