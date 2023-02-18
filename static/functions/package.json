@@ -1,0 +1,9 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "md5": "^2.3.0"
+  }
+}
