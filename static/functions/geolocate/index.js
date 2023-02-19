@@ -1,9 +1,5 @@
 const Reader = require("@maxmind/geoip2-node").Reader;
-
-const fs = require("fs");
 const path = require("path");
-
-// fs.readFile(resolved, (err, results) => console.log(results))
 
 module.exports.handler = async (event, context) => {
   const rawIp = event.headers["x-forwarded-for"];
@@ -17,7 +13,7 @@ module.exports.handler = async (event, context) => {
     process.env.LAMBDA_TASK_ROOT === "/var/task"
       ? path.resolve(
           process.env.LAMBDA_TASK_ROOT,
-          "./src/static/functions/geolocate/",
+          "./src/src/functions/geolocate/",
           fileName
         )
       : path.resolve(__dirname, fileName);
