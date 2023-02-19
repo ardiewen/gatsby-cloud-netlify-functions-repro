@@ -9,14 +9,15 @@ module.exports.handler = async (event, context) => {
   console.log("[Geolocate] Requested Client IP", clientIp);
   console.log("Lambda task root: ", process.env.LAMBDA_TASK_ROOT);
   const fileName = "./data/GeoLite2-Country.mmdb";
-  const resolved =
-    process.env.LAMBDA_TASK_ROOT === "/var/task"
-      ? path.resolve(
-          process.env.LAMBDA_TASK_ROOT,
-          "./src/src/functions/geolocate/",
-          fileName
-        )
-      : path.resolve(__dirname, fileName);
+  // const resolved =
+  //   process.env.LAMBDA_TASK_ROOT === "/var/task"
+  //     ? path.resolve(
+  //         process.env.LAMBDA_TASK_ROOT,
+  //         "./src/src/functions/geolocate/",
+  //         fileName
+  //       )
+  //     : path.resolve(__dirname, fileName);
+  const resolved = path.resolve(__dirname, fileName);
   console.log("Resolved", resolved);
 
   const reader = await Reader.open(resolved);
